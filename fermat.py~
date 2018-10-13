@@ -1,0 +1,41 @@
+import random
+
+
+
+def prime_test(N, k):
+    nums[]
+    for _ in range(k):
+        n = random.randint(2, N - 1)
+        while n in nums:
+            n = random.randint(2, N - 1)
+        nums.append(n)
+
+    for num in nums:
+        if mod_exp(num, N - 1, N) != 1:
+            return 'composite'
+    if is_carmichael(N, nums[0]):
+        return 'carmichael'
+    return 'prime'
+
+
+
+def mod_exp(x, y, N):
+    if y == 0:
+        return 1
+    z = mod_exp(x, y//2, N)
+    if y % 2 == 1:
+        return (x * z**2) % N
+    return z**2 % N
+
+
+
+def probability(k):
+    # You will need to implements this function and change the return value.
+    return 1.0 - (1 / 2**k)
+
+
+
+def is_carmichael(N,a):
+    # You will need to implements this function and change the return value.
+    return False
+
